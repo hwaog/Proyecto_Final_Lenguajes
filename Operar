@@ -1,0 +1,43 @@
+package ProyectoFinal;
+
+import java.util.Random;
+
+class Operar extends Concursante {
+
+    // Constructor
+    public Operar() {
+        super(generarNombreAleatorio(), generarEdad(), generarCedula(), generarTiempo(), generarDia());
+    }
+
+    // Método para generar un nombre aleatorio
+    private static String generarNombreAleatorio() {
+        String[] nom = {
+                "Juan Gómez", "María López", "Luis Martínez", "Ana Fernández", "Carlos Pérez",
+                "Laura García", "Pedro Rodríguez", "Isabel Sánchez", "Javier Díaz", "Elena Torres",
+                "Andrés Herrera", "Sofía Castro", "Daniel Morales", "Marta Ortega", "Alejandro Vargas",
+                "Valeria Mendoza", "Nicolás Soto", "Paula Navarro", "David Paredes", "Adriana Jiménez",
+                "Sergio Silva", "Valentina Ríos", "Roberto Méndez", "Gabriela Castro", "Raúl Espinoza",
+                "Carolina Vargas", "Diego Ramírez", "Natalia Medina", "Isaac Herrera", "Camila Guzmán"};
+        return nom[new Random().nextInt(nom.length)];
+    }
+
+    // Método para generar un número aleatorio dentro de un rango
+    private static int generarEdad() {
+        return new Random().nextInt(58) + 18;
+    }
+
+    // Método para generar un número aleatorio dentro de un rango
+    private static int generarCedula() {
+        return new Random().nextInt(999999999);
+    }
+
+    // Método para generar un número aleatorio dentro de un rango
+    private static int generarTiempo() {
+        return new Random().nextInt(5);
+    }
+    
+    private static String generarDia() {
+    	String[] dia  = {"Lunes", "Martes", "Miércoles", "Jueves", "Viernes"};
+        return dia[new Random().nextInt(dia.length)];
+    }
+}
