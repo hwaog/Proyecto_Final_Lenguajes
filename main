@@ -1,0 +1,58 @@
+package ProyectoFinal;
+
+public class main {
+	public static void main(String[] args) {
+        // Crear un arreglo de instancias de la clase Operar
+        Operar[] cuenta = new Operar[10];
+        Operar[] dias = new Operar[5];
+
+     // Inicializar las instancias y mostrar la información de cada concursante
+        String[] nombresDias = {"Lunes", "Martes", "Miércoles", "Jueves", "Viernes"};
+        
+        for (int j = 0; j < dias.length; j++) {
+            // Inicializar un nuevo Operar y asignar el día de forma ordenada
+            dias[j] = new Operar();
+            dias[j].setDia(nombresDias[j]);
+            System.out.println();
+            System.out.println();
+            System.out.println();
+            System.out.println("Día " + dias[j].getDia() + ":");
+            System.out.println("--------------------------------------");
+       
+            Operar ganadorDia = null;
+            int tiempoMinimo = Integer.MAX_VALUE;
+
+            // Mostrar información de concursantes para el día actual
+            for (int i = 0; i < cuenta.length; i++) {
+                cuenta[i] = new Operar();
+                // Asignar el día a cada concursante
+                cuenta[i].setDia(dias[j].getDia());
+
+                System.out.println("Concursante " + (i + 1) + ":");
+                System.out.println("Nombre: " + cuenta[i].getNombre());
+                System.out.println("Edad: " + cuenta[i].getEdad());
+                System.out.println("Cédula: " + cuenta[i].getCedula());
+                System.out.println("Tiempo en contestar pregunta por llamada en minutos: " + cuenta[i].getTiempo());
+                System.out.println("--------------------------------------");
+
+                // Verificar si este concursante tiene el tiempo más bajo
+                if (cuenta[i].getTiempo() < tiempoMinimo) {
+                    tiempoMinimo = cuenta[i].getTiempo();
+                    ganadorDia = cuenta[i];
+                }
+            }
+
+            // Mostrar al ganador del día
+            if (ganadorDia != null) {
+            	System.out.println();
+                System.out.println("                                            !!!!!!!!!!Ganador del día!!!!!!!!!!");
+                System.out.println("Nombre: " + ganadorDia.getNombre());
+                System.out.println("Edad: " + ganadorDia.getEdad());
+                System.out.println("Cédula: " + ganadorDia.getCedula());
+                System.out.println("Tiempo en contestar pregunta por llamada en minutos: " + ganadorDia.getTiempo());
+                System.out.println("--------------------------------------");
+            }
+        }
+            
+    }
+} 
