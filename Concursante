@@ -1,0 +1,59 @@
+package ProyectoFinal;
+
+class Concursante {
+    private String nombre;
+    private int edad;
+    private int cedula;
+    private int tiempo;
+    private String dia;
+
+    // Constructor
+    public Concursante(String nombre, int edad, int cedula, int tiempo, String dia) {
+        this.nombre = nombre;
+        this.edad = edad;
+        this.cedula = cedula;
+        this.tiempo = tiempo;
+        this.dia = dia;
+    }
+
+    // Métodos getter y setter para encapsulamiento
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public int getEdad() {
+        return edad;
+    }
+
+    public void setEdad(int edad) {
+        this.edad = edad;
+    }
+    
+    public int getCedula() {
+        return cedula;
+    }
+
+    public void setCedula(int cedula) {
+        this.cedula = cedula;
+    }
+    
+    public int getTiempo() {
+        return tiempo;
+    }
+
+    public void setTiempo(int tiempo) {
+        this.tiempo = tiempo;
+    }
+    
+    public String getDia() {
+        return dia;
+    }
+
+    public void setDia(String dia) {
+        this.dia = dia;
+    }
+}
