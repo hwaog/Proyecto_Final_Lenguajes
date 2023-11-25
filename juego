@@ -1,0 +1,50 @@
+package ProyectoFinal;
+
+class juego {
+
+	private int premios;
+    private String comodines;
+    private int numero;
+    private int numero2;
+
+    // Constructor
+    public juego(String comodines, int premios, int numero, int numero2) {
+        this.comodines = comodines;
+        this.premios = premios;
+        this.numero = numero;
+        this.numero2 = numero2;
+    }
+
+    // Métodos getter y setter para encapsulamiento
+    public String getComodines() {
+        return comodines;
+    }
+
+    public void setComodines(String comodines) {
+        this.comodines = comodines;
+    }
+    
+    public int getPremios() {
+        return premios;
+    }
+
+    public void setPremios(int premios) {
+        this.premios = premios;
+    }
+    
+    public int getNumero() {
+        return numero;
+    }
+
+    public void setNumero(int numero) {
+        this.numero = numero;
+    }
+    
+    public int getNumero2() {
+        return numero2;
+    }
+
+    public void setNumero2(int numero2) {
+        this.numero2 = numero2;
+    }
+}
