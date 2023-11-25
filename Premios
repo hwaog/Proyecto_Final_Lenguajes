@@ -1,0 +1,31 @@
+package ProyectoFinal;
+
+import java.util.Random;
+
+class Premios extends juego {
+
+	public Premios() {
+        super(generarComodines(), generarPremioAleatorio(), generarNumeroAleatorio(), generarNumero2());
+    }
+	
+	static int generarNumeroAleatorio() {
+    	int numero = new Random().nextInt(14) + 1;
+        return numero;
+    }
+	
+    private static int generarPremioAleatorio() {
+    	int[] premios = {100000, 200000, 300000, 500000, 1000000, 2000000, 3000000, 5000000, 7000000, 10000000, 12000000, 20000000, 50000000, 100000000, 300000000};
+        return premios[new Random().nextInt(premios.length)];
+    }
+    
+    static int generarNumero2() {
+    	int numero2 = new Random().nextInt(4);
+        return numero2;
+    }
+    
+    static String generarComodines() {
+    	String[] comodines = {"50/50", "llamar a un amigo", "ayuda del publico"};
+        return comodines[new Random().nextInt(comodines.length)];
+    }
+	
+}
