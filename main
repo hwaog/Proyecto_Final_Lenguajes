@@ -1,15 +1,22 @@
 package ProyectoFinal;
 
+import java.util.Random;
+
 public class main {
 	public static void main(String[] args) {
         // Crear un arreglo de instancias de la clase Operar
         Operar[] cuenta = new Operar[10];
         Operar[] dias = new Operar[5];
+        
+        Premios max = new Premios();
 
      // Inicializar las instancias y mostrar la información de cada concursante
         String[] nombresDias = {"Lunes", "Martes", "Miércoles", "Jueves", "Viernes"};
         
         for (int j = 0; j < dias.length; j++) {
+        	
+        	int g = 0;
+        	
             // Inicializar un nuevo Operar y asignar el día de forma ordenada
             dias[j] = new Operar();
             dias[j].setDia(nombresDias[j]);
@@ -34,13 +41,15 @@ public class main {
                 System.out.println("Cédula: " + cuenta[i].getCedula());
                 System.out.println("Tiempo en contestar pregunta por llamada en minutos: " + cuenta[i].getTiempo());
                 System.out.println("--------------------------------------");
-
+    
                 // Verificar si este concursante tiene el tiempo más bajo
                 if (cuenta[i].getTiempo() < tiempoMinimo) {
                     tiempoMinimo = cuenta[i].getTiempo();
                     ganadorDia = cuenta[i];
                 }
             }
+            
+            g = max.generarNumero2();
 
             // Mostrar al ganador del día
             if (ganadorDia != null) {
@@ -50,9 +59,21 @@ public class main {
                 System.out.println("Edad: " + ganadorDia.getEdad());
                 System.out.println("Cédula: " + ganadorDia.getCedula());
                 System.out.println("Tiempo en contestar pregunta por llamada en minutos: " + ganadorDia.getTiempo());
-                System.out.println("--------------------------------------");
             }
+            System.out.println("El concursante llego hasta la prenunta numero: " + max.generarNumeroAleatorio());
+            System.out.println("El numero de comodines usados por el concursante es: " + g);
+            
+            for(int a = 0; a < g; a++) {
+            	String palabra;
+            	palabra = Premios.generarComodines();
+            	System.out.println("Un comodin usado es: " + palabra);
+            }
+            System.out.println("--------------------------------------");
+            
         }
             
+        
+        
+        
     }
 } 
