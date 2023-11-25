@@ -6,6 +6,7 @@ class Concursante {
     private int cedula;
     private int tiempo;
     private String dia;
+    
 
     // Constructor
     public Concursante(String nombre, int edad, int cedula, int tiempo, String dia) {
